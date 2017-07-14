@@ -19,15 +19,11 @@ Ansible 2.3을 이용하여 Elastic stack의 일부인 Logstash 5.5.0을 다수�
 			
 ### _Directories schema_
 
-| Directory | desc  |
-| ------------- | ------------- |
-| group_vars | `Logstash`를 install하기 위한 전역 설정 값들이 정의되어 있습니다. |
-| inventories  | 설치할 서버 정보가 정의되어 있습니다.  |
-| roels  | 디렉터리 생성, JDK 설정 등과 같은 기본 설정과 `Logstash` 설치까지의 모든 과정이 태스크로 정의되어 있습니다. |
-| DB | mariaDB, postgreSQL, mysql |
-| utils  | google drive, mailgun |
-| devOps  | **vim**, github, sublime text, sentry, pycharm|
-| business tool  | wordpress, slack, kakao|
+#####| Directory | desc  |
+#####| ------------- | ------------- |
+#####| group_vars | `Logstash`를 install하기 위한 전역 설정 값들이 정의되어 있습니다. |
+#####| inventories  | 설치할 서버 정보가 정의되어 있습니다.  |
+#####| roles  | 디렉터리 생성, JDK 설정 등과 같은 기본 설정과 `Logstash` 설치까지의 모든 과정이 태스크로 정의되어 있습니다. |
 
 
 
