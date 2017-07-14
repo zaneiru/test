@@ -1,9 +1,8 @@
-# Logstash 5.5.0 install using Ansible 2.3
----
-
-
+# Logstash 5.5.0 install using Ansible 2.3   
+___
 [![logstash](https://img.shields.io/badge/Logstash-5.5.0-brightgreen.svg)](https://www.elastic.co/guide/en/logstash/current/introduction.html)
 [![ansible](https://img.shields.io/badge/ansible-2.3-orange.svg)](https://www.elastic.co/guide/en/logstash/current/introduction.html)
+
 
 
 
