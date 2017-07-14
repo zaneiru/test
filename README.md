@@ -1,4 +1,7 @@
-## Logstash 5.5.0 install using Ansible 2.2  
+# Logstash 5.5.0 install using Ansible 2.3
+---
+
+
 [![logstash](https://img.shields.io/badge/Logstash-5.5.0-brightgreen.svg)](https://www.elastic.co/guide/en/logstash/current/introduction.html)
 [![ansible](https://img.shields.io/badge/ansible-2.3-orange.svg)](https://www.ansible.com/it-automation)
 
@@ -11,10 +14,21 @@ Ansible 2.3을 이용하여 Elastic stack의 일부인 Logstash 5.5.0을 다수�
 > **Note :**
 >
 > - `Logstash를 start 스크립트를 이용하여 시작하기 전에 Elasticsearch를 먼저 실행하시기 바랍니다.`
-> - `어떻게 할까요?`
+> - `어떻게 할까요?`    
 
+			
+### _Directories schema_
 
-:speech_balloon:  스크립트 실행방법
+| Directory | desc  |
+| ------------- | ------------- |
+| group_vars | `Logstash`를 install하기 위한 전역 설정 값들이 정의되어 있습니다. |
+| inventories  | 설치할 서버 정보가 정의되어 있습니다.  |
+| roels  | 디렉터리 생성, JDK 설정 등과 같은 기본 설정과 `Logstash` 설치까지의 모든 과정이 태스크로 정의되어 있습니다. |
+| DB | mariaDB, postgreSQL, mysql |
+| utils  | google drive, mailgun |
+| devOps  | **vim**, github, sublime text, sentry, pycharm|
+| business tool  | wordpress, slack, kakao|
+
 
 
 ### How?
