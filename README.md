@@ -1,7 +1,4 @@
 
-<html>
-<iframe src="http://daum.net" width="100%" height="100%"></iframe>
-</html>
-
+[![Demo CountPages alpha](http://daum.net)](http://daum.net)
 
 
