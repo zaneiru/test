@@ -1,8 +1,9 @@
-# Logstash 5.5.0 install using Ansible 2.3   
-___
-[![logstash](https://img.shields.io/badge/Logstash-5.5.0-brightgreen.svg)](https://www.elastic.co/guide/en/logstash/current/introduction.html)
-[![ansible](https://img.shields.io/badge/ansible-2.3-orange.svg)](https://www.elastic.co/guide/en/logstash/current/introduction.html)
+# Logstash 5.5.0 install using Ansible 2.3
+---
 
+
+[![logstash](https://img.shields.io/badge/Logstash-5.5.0-brightgreen.svg)](https://www.elastic.co/guide/en/logstash/current/introduction.html)
+[![ansible](https://img.shields.io/badge/ansible-2.3-orange.svg)](https://www.ansible.com/it-automation)
 
 
 
@@ -12,7 +13,8 @@ Ansible 2.3을 이용하여 Elastic stack의 일부인 Logstash 5.5.0을 다수�
 ### _Getting started_
 > **Note :**
 >
-> Logstash를 start 스크립트를 이용하여 시작하기 전에 Elasticsearch를 먼저 실행하시기 바랍니다.
+> - `Logstash를 start 스크립트를 이용하여 시작하기 전에 Elasticsearch를 먼저 실행하시기 바랍니다.`
+> - `어떻게 할까요?`
 
 
 :speech_balloon:  스크립트 실행방법
