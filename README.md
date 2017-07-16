@@ -1,11 +1,7 @@
 # Logstash 5.5.0 install using Ansible 2.3
----
-
 
 [![logstash](https://img.shields.io/badge/Logstash-5.5.0-brightgreen.svg)](https://www.elastic.co/guide/en/logstash/current/introduction.html)
 [![ansible](https://img.shields.io/badge/ansible-2.3-orange.svg)](https://www.ansible.com/it-automation)
-
-
 
 Ansible 2.3을 이용하여 Elastic stack의 일부인 Logstash 5.5.0을 다수의 서버에 설치할 수 있습니다.  
 설치 전에 필히 `수정해야 할 항목`과 설치 `Script` 사용방법을 확인한 후에 사용하시기 바랍니다.
