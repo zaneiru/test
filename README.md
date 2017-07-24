@@ -35,13 +35,17 @@ items | desc  | 필수 확인 항목
 | logstash.conf.input.client_id| 해당 프로젝트를 구분하는 네이밍으로 적당히 설정|Y
 
 
-### Logstash input config 관련 항목들 확인 (디렉터리 : group_vars , 파일이름 : all)
-> **Logstash output config**
->
-> - **logstash.conf.output.hosts** Elasticserach의 호스트명 혹은 도메인을 설정
+***_[Logstash input config 관련 항목들 확인]_***
+> 디렉터리 : group_vars  
+> 파일이름 : all  
 
-### Logstash 설치 및 설정 대상 Remote server 항목들 확인 (디렉터리 : inventories/하위 , 파일이름 : hosts.yml)
-> **서버 목록**
+items | desc  | 필수 확인 항목
+| ------------- | ------------- |---|
+| logstash.conf.output.hosts | Elasticserach의 호스트명 혹은 도메인을 설정  |Y
+
+***_[Logstash 설치 및 설정 대상 Remote server 항목들 확인]_***
+> 디렉터리 : inventories/하위  
+> 파일이름 : main.yml  
 >
 > - 신규 서버 추가시에는 **[logstash-develop-new]** 혹은 **[logstash-production-new]** 추가후 Logstash 설치 및 설정 진행
 > - 모든 설정 완료 후에는 기존 **[logstash-develop]** 및 **[logstash-production]** 에 해당 서버 호스트 추가하고 *-new 호스트 그룹은 삭제
