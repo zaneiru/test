@@ -1,14 +1,14 @@
-#Logstash 5.5.0 install using ansible 
+Logstash 5.5.0 install using ansible 
 =======================
 
 [![logstash](https://img.shields.io/badge/Logstash-5.5.0-brightgreen.svg)](https://www.elastic.co/guide/en/logstash/current/introduction.html)
 [![ansible](https://img.shields.io/badge/ansible-2.3-orange.svg)](https://www.ansible.com/it-automation)
 
-Ansible 2.3을 이용하여 Elastic stack의 일부인 Logstash 5.5.0을 다수의 서버에 설치할 수 있습니다.  
-설치 전에 필히 `수정해야 할 항목`과 설치 `Script` 사용방법을 확인한 후에 사용하시기 바랍니다.
+#### Ansible 2.3을 이용하여 Elastic stack의 일부인 Logstash 5.5.0을 다수의 서버에 설치할 수 있습니다. ####
+#### 설치 전에 필히 `수정해야 할 항목`과 설치 `Script` 사용방법을 확인한 후에 사용하시기 바랍니다. ####
 
 
-### _Directories schema_
+*** _Directories schema_***
 
 Directory | desc  |
 | ------------- | ------------- |
@@ -16,7 +16,7 @@ Directory | desc  |
 | inventories  | 설치할 서버 정보가 정의되어 있습니다.  |
 | roles  | 디렉터리 생성, JDK 설정 등과 같은 기본 설정과 `Logstash` 설치까지의 모든 과정이 태스크로 정의되어 있습니다. |`
 
-### 사용전 변경할 설정 항목들 확인 (디렉터리 : group_vars , 파일이름 : all)
+### 사용전 변경할 설정 항목들 확인 (디렉터리 : group_vars , 파일이름 : all)_
 
 해당 ansible을 실행하기 전에 각 서버의 specification에 맞도록 몇 가지 항목을 수정하시기 바랍니다. 해당 항목을 규칙에 맞게 수정을 해야 **Logstash** 설정이 정상적으로 이루어질 수 있습니다.
 
@@ -25,7 +25,7 @@ Directory | desc  |
 > - **account.user** 실행 계정의 아이디
 > - **account.group** 실행 계정의 그룹
 
-### Logstash input config 관련 항목들 확인 (디렉터리 : group_vars , 파일이름 : all)
+###  Logstash input config 관련 항목들 확인 (디렉터리 : group_vars , 파일이름 : all)
 > **Logstash input config**
 > 
 > - **logstash.conf.input.bootstrap_servers** Kafka 주소를 참고하여 쉼표를 구분으로 설정
