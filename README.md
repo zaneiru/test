@@ -12,7 +12,8 @@ Directory | desc  |
 | ------------- | ------------- |
 | group_vars | `Logstash`를 install하기 위한 전역 설정 값들이 정의되어 있습니다. |
 | inventories  | 설치할 서버 정보가 정의되어 있습니다.  |
-| roles  | 디렉터리 생성, JDK 설정 등과 같은 기본 설정과 `Logstash` 설치까지의 모든 과정이 태스크로 정의되어 있습니다. |`
+| roles  | 디렉터리 생성, JDK 설정 등과 같은 기본 설정과 `Logstash` 설치까지의 모든 과정이 태스크로 정의되어 있습니다. |`  
+
 
 _**사용전 변경할 설정 항목들 확인**_
 > 디렉터리 : group_vars  
@@ -31,14 +32,9 @@ items | desc  | 필수 확인 항목
 | ------------- | ------------- |---|
 | logstash.conf.input.bootstrap_servers | Kafka 주소를 참고하여 쉼표를 구분으로 설정  |Y
 | logstash.conf.input.codec  | 코덱으로 사용할 종류  |Y
+| logstash.conf.input.group_id | Kafka에서 가져올 메시지에 대한 그룹 아이디 (단일 서버 및 다른 클러스터일 경우엔 그룹 아이디를 다르게 적용)| Y
+| logstash.conf.input.client_id| 해당 프로젝트를 구분하는 네이밍으로 적당히 설정|Y
 
-###   (디렉터리 : group_vars , 파일이름 : all)
-> **Logstash input config**
-> 
-> - **logstash.conf.input.bootstrap_servers** 
-> - **** 
-> - **logstash.conf.input.group_id** Kafka에서 가져올 메시지에 대한 그룹 아이디 (단일 서버 및 다른 클러스터일 경우엔 그룹 아이디를 다르게 적용)
-> - **logstash.conf.input.client_id** 해당 프로젝트를 구분하는 네이밍으로 적당히 설정
 
 ### Logstash input config 관련 항목들 확인 (디렉터리 : group_vars , 파일이름 : all)
 > **Logstash output config**
