@@ -6,17 +6,15 @@ ansible-km-iris-logstash
 
 ##### Ansible을 이용하여 Elastic stack의 일부인 Logstash 5.5.0을 다수의 서버에 설치할 수 있습니다. #####   
 
-_Directories schema_
+***_[Directories schema]_***
 
 Directory | desc  |
 | ------------- | ------------- |
 | group_vars | `Logstash`를 install하기 위한 전역 설정 값들이 정의되어 있습니다. |
 | inventories  | 설치할 서버 정보가 정의되어 있습니다.  |
 | roles  | 디렉터리 생성, JDK 설정 등과 같은 기본 설정과 `Logstash` 설치까지의 모든 과정이 태스크로 정의되어 있습니다. |`  
-
-
-
-_**사용전 변경할 설정 항목들 확인**_
+        
+***_[사용전 변경할 설정 항목들 확인]_***
 > 디렉터리 : group_vars  
 > 파일이름 : all  
 
@@ -25,7 +23,7 @@ items | desc  | 필수 확인 항목
 | account.user | 실행 계정의 아이디  |Y
 | account.group  | 실행 계정의 그룹  |Y
 
-_**Logstash input config 관련 항목들 확인**_
+***_[Logstash input config 관련 항목들 확인]_***
 > 디렉터리 : group_vars  
 > 파일이름 : all  
 
