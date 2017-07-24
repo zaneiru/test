@@ -4,8 +4,6 @@ ansible-km-iris-logstash
 [![logstash](https://img.shields.io/badge/Logstash-5.5.0-brightgreen.svg)](https://www.elastic.co/guide/en/logstash/current/introduction.html)
 [![ansible](https://img.shields.io/badge/ansible-2.3-orange.svg)](https://www.ansible.com/it-automation)
 
-##### Ansible을 이용하여 Elastic stack의 일부인 Logstash 5.5.0을 다수의 서버에 설치할 수 있습니다. #####   
-
 ***_[Directories schema]_***
 
 Directory | desc  |
@@ -34,8 +32,7 @@ items | desc  | 필수 확인 항목
 | logstash.conf.input.group_id | Kafka에서 가져올 메시지에 대한 그룹 아이디 (단일 서버 및 다른 클러스터일 경우엔 그룹 아이디를 다르게 적용)| Y
 | logstash.conf.input.client_id| 해당 프로젝트를 구분하는 네이밍으로 적당히 설정|Y
 
-
-***_[Logstash input config 관련 항목들 확인]_***
+## [Logstash input config 관련 항목들 확인]
 > 디렉터리 : group_vars  
 > 파일이름 : all  
 
@@ -43,7 +40,7 @@ items | desc  | 필수 확인 항목
 | ------------- | ------------- |---|
 | logstash.conf.output.hosts | Elasticserach의 호스트명 혹은 도메인을 설정  |Y
 
-***_[Logstash 설치 및 설정 대상 Remote server 항목들 확인]_***
+## [Logstash 설치 및 설정 대상 Remote server 항목들 확인] 
 > 디렉터리 : inventories/하위  
 > 파일이름 : main.yml  
 >
@@ -51,13 +48,16 @@ items | desc  | 필수 확인 항목
 > - 모든 설정 완료 후에는 기존 **[logstash-develop]** 및 **[logstash-production]** 에 해당 서버 호스트 추가하고 *-new 호스트 그룹은 삭제
 
 
-### JDK 설치 및 설정 항목들 확인 (디렉터리 : roles/jdk/vars , 파일이름 : main.yml:
+***_[JDK 설치 및 설정 항목들 확인]_***
+> 디렉터리 : roles/jdk/vars  
+> 파일이름 : main.yml
 
-> **JDK 설치 및 설정 항목**
->
-> - **jdk.version** 설치하고자 하는 JDK 버전
-> - **jdk.file** JDK 파일 (확장자 포함)
-> - **jdk.url** JDK 파일 다운로드 URL
+items | desc  | 필수 확인 항목
+| ------------- | ------------- |---|
+| jdk.version | 설치하고자하는 JDK 버전  |Y
+| jdk.file | JDK 파일 (확장자 포함)  |Y
+| jdk.url | JDK 파일 다운로드 URL  |Y
+
 
 ### Logstash 기본 설치 & 설정 항목 및 플러그인 설정 항목들 확인 (디렉터리 : roles/logstash/vars , 파일이름 : main.yml)
 > **Logstash 설치 및 설정 항목**
