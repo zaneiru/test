@@ -16,9 +16,6 @@ Directory | desc  |
 
 
 
-
-
-
 _**사용전 변경할 설정 항목들 확인**_
 > 디렉터리 : group_vars  
 > 파일이름 : all  
