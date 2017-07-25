@@ -18,7 +18,7 @@ ansible-km-iris-kibana
 11. <a href="#11-kibana만-시작--중지--재시작">Kibana만 시작 / 중지 / 재시작</a>
 
 
-### 1. Directories schema
+#### 1. Directories schema
 
 Directory | desc  |
 | ------------- | ------------- |
@@ -26,7 +26,7 @@ Directory | desc  |
 | inventories  | 설치할 서버 정보가 정의되어 있습니다.  |
 | roles  | 디렉터리 생성, JDK 설정 등과 같은 기본 설정과 `Kibana` 설치까지의 모든 과정이 태스크로 정의되어 있습니다. |`  
         
-### 2. Kibana 설치 및 설정시에 사전 확인해야 할 항목 > 실행 계정
+#### 2. Kibana 설치 및 설정시에 사전 확인해야 할 항목 > 실행 계정
 `디렉터리 : group_vars`  
 `파일이름 : all`
 
@@ -35,7 +35,7 @@ items | desc  | 필수 확인
 | account.user | 실행 계정의 아이디  |Y
 | account.group  | 실행 계정의 그룹  |Y
 
-### 3. Kibana 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보
+#### 3. Kibana 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보
 ```이미 설치된 Elasticsearch가 클러스터 구조일 경우 기존에 설치된 Kibana의 버전과 맞춰줘야 한다.```  
 `디렉터리 : group_vars`  
 `파일이름 : all`
