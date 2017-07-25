@@ -8,7 +8,7 @@ ansible-km-iris-logstash
 1. Directories schema
 2. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 실행 계정
 3. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보
-6. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정
+6. <a href="#6-Logstash-설치-및-설정시에-사전-확인해야-할-항목->-JDK-설치-및-설정">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정</a>
 8. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)
 10. <a href="#10-전체-설치-디렉터리-생성-jdk-설치-logstash설치-등">전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)</a>
 
@@ -111,7 +111,7 @@ items | desc  | 필수 확인 항목
 | plugin.xpack.file | X-pack 플러그인 파일 (확장자 포함)  |Y
 | plugin.xpack.url | X-pack 플러그인 다운로드 URL  |Y
 
-## [10. 전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)](#launcher)
+## 10. 전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)
 Develop - syntax  
 ```ruby
 ansible-playbook -i inventories/sh대상서버군(develop) launcher.yml --extra-vars "host=서버 호스트"
