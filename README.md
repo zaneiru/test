@@ -8,7 +8,8 @@ ansible-km-iris-logstash
 1. Directories schema
 2. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 실행 계정
 3. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보
-
+6. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정
+8. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)
 
 ## 1. Directories schema
 
@@ -22,7 +23,7 @@ Directory | desc  |
 > 디렉터리 : group_vars  
 > 파일이름 : all  
 
-items | desc  | 필수 확인 항목
+items | desc  | 필수 확인
 | ------------- | ------------- |---|
 | account.user | 실행 계정의 아이디  |Y
 | account.group  | 실행 계정의 그룹  |Y
@@ -32,7 +33,7 @@ items | desc  | 필수 확인 항목
 > 디렉터리 : group_vars  
 > 파일이름 : all  
 
-items | desc  | 필수 확인 항목
+items | desc  | 필수 확인
 | ------------- | ------------- |---|
 | logstash.version | 설치하고자 하는 Logstash 버전  |Y
 | logstash.filename | 설치하고자 하는 Logstash 파일명 (확장자 제외)  |Y
@@ -42,7 +43,7 @@ items | desc  | 필수 확인 항목
 > 디렉터리 : group_vars  
 > 파일이름 : all  
 
-items | desc  | 필수 확인 항목
+items | desc  | 필수 확인
 | ------------- | ------------- |---|
 | logstash.conf.output.hosts | Elasticserach의 호스트명 혹은 도메인을 설정  |Y
 
@@ -53,15 +54,16 @@ items | desc  | 필수 확인 항목
 > - 신규 서버 추가시에는 **[logstash-develop-new]** 혹은 **[logstash-production-new]** 추가후 Logstash 설치 및 설정 진행
 > - 모든 설정 완료 후에는 기존 **[logstash-develop]** 및 **[logstash-production]** 에 해당 서버 호스트 추가하고 *-new 호스트 그룹은 삭제
 
-## 6. JDK 설치 및 설정 항목들 확인
+## 6. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정
+#### JDK가 이미 설된 경우 고려하지 않아도 된다.
 > 디렉터리 : roles/jdk/vars  
 > 파일이름 : main.yml
 
-items | desc  | 필수 확인 항목
+items | desc  | 필수 확인
 | ------------- | ------------- |---|
-| jdk.version | 설치하고자하는 JDK 버전  |Y
-| jdk.file | JDK 파일 (확장자 포함)  |Y
-| jdk.url | JDK 파일 다운로드 URL  |Y
+| jdk.version | 설치하고자하는 JDK 버전  |N
+| jdk.file | JDK 파일 (확장자 포함)  |N
+| jdk.url | JDK 파일 다운로드 URL  |N
 
 
 ## 7. Logstash 기본 설치 & 설정 항목 및 플러그인 설정 항목들 확인
@@ -89,7 +91,7 @@ items | desc  | 필수 확인 항목
 | config.output.list[].document_id | 클러스터링 구조일 경우 document가 중복으로 저장되지 않게끔 유니크키를 지정    |Y
 | config.output.list[].codec | output 메시지 코덱  |Y
 
-## 8. Smith(Morpheus) 설정 항목들 확인 
+## 8. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)
 > 디렉터리 : roles/morpheus/vars  
 > 파일이름 : main.yml
 
@@ -104,6 +106,14 @@ items | desc  | 필수 확인 항목
 
 items | desc  | 필수 확인 항목
 | ------------- | ------------- |---|
-| plugin.xpack.version | X-pack 플러그인 버전  |N
-| plugin.xpack.file | X-pack 플러그인 파일 (확장자 포함)  |N
-| plugin.xpack.url | X-pack 플러그인 다운로드 URL  |N
+| plugin.xpack.version | X-pack 플러그인 버전  |Y
+| plugin.xpack.file | X-pack 플러그인 파일 (확장자 포함)  |Y
+| plugin.xpack.url | X-pack 플러그인 다운로드 URL  |Y
+
+## 10. 기본 전체 설치 
+Develop - syntax
+<pre><code>ansible-playbook -i inventories/대상서버군(develop 혹은 production) launcher.yml --extra-vars "host=서버 호스트"</code></pre>
+Develop - sample
+<pre><code>ansible-playbook -i inventories/logstash-develop launcher.yml --extra-vars "host=logstash-develop"</code></pre>
+
+Production
