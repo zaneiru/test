@@ -36,7 +36,7 @@ items | desc  | 필수 확인
 | account.group  | 실행 계정의 그룹  |Y
 
 ### 3. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보
-#### 이미 설치된 Elasticsearch가 클러스터 구조일 경우 기존에 설치된 Logstash의 버전과 맞춰줘야 한다.
+```이미 설치된 Elasticsearch가 클러스터 구조일 경우 기존에 설치된 Logstash의 버전과 맞춰줘야 한다.```
 > 디렉터리 : group_vars  
 > 파일이름 : all  
 
