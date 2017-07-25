@@ -123,32 +123,32 @@ items | desc  | 필수 확인 항목
 
 ## 10. 전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)
 Develop - syntax  
-```ruby
+```sh
 ansible-playbook -i inventories/sh대상서버군(develop) launcher.yml --extra-vars "host=서버 호스트"
 ```
 Develop - sample
-```ruby
+```sh
 ansible-playbook -i inventories/logstash-develop launcher.yml --extra-vars "host=logstash-develop"
 ```
  
 Production - syntax
-```ruby
+```sh
 ansible-playbook -i inventories/대상서버군(production) launcher.yml --extra-vars "host=서버 호스트"
 ```
 Develop - sample
-```ruby
+```sh
 ansible-playbook -i inventories/logstash-production launcher.yml --extra-vars "host=logstash-production"
 ```
 
-# 11. Logstash만 설치
+### 11. Logstash만 설치
 Logstsh - syntax
-```ruby
+```sh
 ansible-playbook -i inventories/대상서버군 logtash_setup.yml --extra-vars "host=서버 호스트"
 ```
 
-# 12. Logstash만 시작 / 중지 / 재시작
+### 12. Logstash만 시작 / 중지 / 재시작
 Logstsh - 시작
-```gem
+```sh
 ansible-playbook -i inventories/대상서버군 logtash_start.yml --extra-vars "host=서버 호스트"
 ```
 Logstsh - 중지
@@ -156,6 +156,6 @@ Logstsh - 중지
 ansible-playbook -i inventories/대상서버군 logtash_stop.yml --extra-vars "host=서버 호스트"
 ```
 Logstsh - 재시작
-```ansible
+```sh
 ansible-playbook -i inventories/대상서버군 logtash_stop.yml --extra-vars "host=서버 호스트"
 ```
