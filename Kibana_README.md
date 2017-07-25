@@ -6,16 +6,16 @@ ansible-km-iris-kibana
 
 ## Index
 1. <a href="#1-directories-schema">Directories schema</a>
-2. <a href="">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > 실행 계정</a>
-3. <a href="">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보</a>
-4. <a href="">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > Kibana 설치 및 설정 대상 서버 목록</a>
-5. <a href="">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정</a>
-6. <a href="">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > 기타 항목 및 플러그인 설정 항목</a>
-7. <a href="">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)</a>
-8. <a href="">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > Kibana 플러그인 설정 항목들 확인 </a>
-9. <a href="">전체 설치 (디렉터리 생성, JDK 설치, Kibana설치 등)</a>
-10. <a href="">Kibana만 설치</a>
-11. <a href="">Kibana만 시작 / 중지 / 재시작</a>
+2. <a href="#2-kibana-설치-및-설정시에-사전-확인해야-할-항목--실행-계정">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > 실행 계정</a>
+3. <a href="#3-kibana-설치-및-설정시에-사전-확인해야-할-항목--파일-및-다운로드-url-정보">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보</a>
+4. <a href="#4-kibana-설치-및-설정시에-사전-확인해야-할-항목--kibana-설치-및-설정-대상-서버-목록">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > Kibana 설치 및 설정 대상 서버 목록</a>
+5. <a href="#5-kibana-설치-및-설정시에-사전-확인해야-할-항목--jdk-설치-및-설정">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정</a>
+6. <a href="#6-kibana-설치-및-설정시에-사전-확인해야-할-항목--기타-항목-및-플러그인-설정-항목">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > 기타 항목 및 플러그인 설정 항목</a>
+7. <a href="#7-kibana-설치-및-설정시에-사전-확인해야-할-항목--모피어스-알림smith">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)</a>
+8. <a href="#8-kibana-설치-및-설정시에-사전-확인해야-할-항목--kibana-플러그인-설정-항목들-확인">Kibana 설치 및 설정시에 사전 확인해야 할 항목 > Kibana 플러그인 설정 항목들 확인 </a>
+9. <a href="#9-전체-설치-디렉터리-생성-jdk-설치-kibana설치-등">전체 설치 (디렉터리 생성, JDK 설치, Kibana설치 등)</a>
+10. <a href="#10-kibana만-설치">Kibana만 설치</a>
+11. <a href="#11-kibana만-시작--중지--재시작">Kibana만 시작 / 중지 / 재시작</a>
 
 
 ### 1. Directories schema
@@ -108,7 +108,7 @@ ansible-playbook -i inventories/대상서버군(develop) launcher.yml --extra-va
 ```
 Develop - sample
 ```sh
-ansible-playbook -i inventories/logstash-develop launcher.yml --extra-vars "host=kibana-develop"
+ansible-playbook -i inventories/kibana-develop launcher.yml --extra-vars "host=kibana-develop"
 ```
  
 Production - syntax
@@ -117,7 +117,7 @@ ansible-playbook -i inventories/대상서버군(production) launcher.yml --extra
 ```
 Develop - sample
 ```sh
-ansible-playbook -i inventories/logstash-production launcher.yml --extra-vars "host=kibana-production"
+ansible-playbook -i inventories/kibana-production launcher.yml --extra-vars "host=kibana-production"
 ```
 
 ### 10. Kibana만 설치
