@@ -10,6 +10,7 @@ ansible-km-iris-logstash
 3. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보
 6. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정
 8. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)
+10. <a name="launcher">전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)</a>
 
 ## 1. Directories schema
 
@@ -110,10 +111,25 @@ items | desc  | 필수 확인 항목
 | plugin.xpack.file | X-pack 플러그인 파일 (확장자 포함)  |Y
 | plugin.xpack.url | X-pack 플러그인 다운로드 URL  |Y
 
-## 10. 기본 전체 설치 
+## [10. 전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)](#launcher)
 Develop - syntax
-<pre><code>ansible-playbook -i inventories/대상서버군(develop 혹은 production) launcher.yml --extra-vars "host=서버 호스트"</code></pre>
+<pre><code>ansible-playbook -i inventories/대상서버군(develop) launcher.yml --extra-vars "host=서버 호스트"</code></pre>
 Develop - sample
 <pre><code>ansible-playbook -i inventories/logstash-develop launcher.yml --extra-vars "host=logstash-develop"</code></pre>
 
-Production
+Production - syntax
+<pre><code>ansible-playbook -i inventories/대상서버군(production) launcher.yml --extra-vars "host=서버 호스트"</code></pre>
+Develop - sample
+<pre><code>ansible-playbook -i inventories/logstash-production launcher.yml --extra-vars "host=logstash-production"</code></pre>
+
+# 10. Logstash만 설치
+Logstsh - syntax
+<pre><code>ansible-playbook -i inventories/대상서버군 logtash_setup.yml --extra-vars "host=서버 호스트"</code></pre>
+
+# 11. Logstash만 시작 / 중지 / 재시작
+Logstsh - 시작
+<pre><code>ansible-playbook -i inventories/대상서버군 logtash_start.yml --extra-vars "host=서버 호스트"</code></pre>
+Logstsh - 중지
+<pre><code>ansible-playbook -i inventories/대상서버군 logtash_stop.yml --extra-vars "host=서버 호스트"</code></pre>
+Logstsh - 재시작
+<pre><code>ansible-playbook -i inventories/대상서버군 logtash_stop.yml --extra-vars "host=서버 호스트"</code></pre>
