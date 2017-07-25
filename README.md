@@ -18,7 +18,7 @@ ansible-km-iris-logstash
 11. <a href="#11-logstash만-설치">Logstash만 설치</a>
 12. <a href="#12-logstash만-시작--중지--재시작">Logstash만 시작 / 중지 / 재시작</a>
 
-## 1. Directories schema
+### 1. Directories schema
 
 Directory | desc  |
 | ------------- | ------------- |
@@ -26,7 +26,7 @@ Directory | desc  |
 | inventories  | 설치할 서버 정보가 정의되어 있습니다.  |
 | roles  | 디렉터리 생성, JDK 설정 등과 같은 기본 설정과 `Logstash` 설치까지의 모든 과정이 태스크로 정의되어 있습니다. |`  
         
-## 2. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 실행 계정
+### 2. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 실행 계정
 > 디렉터리 : group_vars  
 > 파일이름 : all  
 
@@ -35,7 +35,7 @@ items | desc  | 필수 확인
 | account.user | 실행 계정의 아이디  |Y
 | account.group  | 실행 계정의 그룹  |Y
 
-## 3. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보
+### 3. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보
 #### 이미 설치된 Elasticsearch가 클러스터 구조일 경우 기존에 설치된 Logstash의 버전과 맞춰줘야 한다.
 > 디렉터리 : group_vars  
 > 파일이름 : all  
@@ -46,7 +46,7 @@ items | desc  | 필수 확인
 | logstash.filename | 설치하고자 하는 Logstash 파일명 (확장자 제외)  |Y
 | logstash.url | 설치하고자 하는 버전의 Logstash 다운로드 URL  |Y
 
-## 4. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > input/output config 관련 항목
+### 4. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > input/output config 관련 항목
 > 디렉터리 : group_vars  
 > 파일이름 : all  
 
@@ -58,14 +58,14 @@ items | desc  | 필수 확인
 | logstash.conf.input.client_id|ID 문자열|Y or N (되도록 체크)
 | logstash.conf.output.hosts|Elasticsearch의 마스터 노드 address 혹은 도메인|Y
 
-## 5. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > Logstash 설치 및 설정 대상 서버 목록
+### 5. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > Logstash 설치 및 설정 대상 서버 목록
 > 디렉터리 : inventories/하위  
 > 파일이름 : main.yml  
 >
 > - 신규 서버 추가시에는 **[logstash-develop-new]** 혹은 **[logstash-production-new]** 추가후 Logstash 설치 및 설정 진행
 > - 모든 설정 완료 후에는 기존 **[logstash-develop]** 및 **[logstash-production]** 에 해당 서버 호스트 추가하고 *-new 호스트 그룹은 삭제
 
-## 6. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정
+### 6. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정
 #### JDK가 이미 설된 경우 고려하지 않아도 된다.
 > 디렉터리 : roles/jdk/vars  
 > 파일이름 : main.yml
@@ -77,7 +77,7 @@ items | desc  | 필수 확인
 | jdk.url | JDK 파일 다운로드 URL  |N
 
 
-## 7. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 기타 항목 및 플러그인 설정 항목
+### 7. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 기타 항목 및 플러그인 설정 항목
 > 디렉터리 : roles/logstash/vars  
 > 파일이름 : main.yml
 
@@ -102,7 +102,7 @@ items | desc  | 필수 확인 항목
 | config.output.list[].document_id | 클러스터링 구조일 경우 document가 중복으로 저장되지 않게끔 유니크키를 지정    |Y
 | config.output.list[].codec | output 메시지 코덱  |Y
 
-## 8. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)
+### 8. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)
 > 디렉터리 : roles/morpheus/vars  
 > 파일이름 : main.yml
 
@@ -111,7 +111,7 @@ items | desc  | 필수 확인 항목
 | smith.url | 모피어스 알림 에이전트인 Smith 다운로드 URL  |N
 
 
-##  9. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > Logstash 플러그인 설정 항목들 확인 
+###  9. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > Logstash 플러그인 설정 항목들 확인 
 > 디렉터리 : roles/plugin/vars  
 > 파일이름 : main.yml
 
@@ -121,7 +121,7 @@ items | desc  | 필수 확인 항목
 | plugin.xpack.file | X-pack 플러그인 파일 (확장자 포함)  |Y
 | plugin.xpack.url | X-pack 플러그인 다운로드 URL  |Y
 
-## 10. 전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)
+### 10. 전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)
 Develop - syntax  
 ```sh
 ansible-playbook -i inventories/sh대상서버군(develop) launcher.yml --extra-vars "host=서버 호스트"
@@ -147,15 +147,15 @@ ansible-playbook -i inventories/대상서버군 logtash_setup.yml --extra-vars "
 ```
 
 ### 12. Logstash만 시작 / 중지 / 재시작
-#### Logstsh - 시작
+Logstash - 시작
 ```sh
 ansible-playbook -i inventories/대상서버군 logtash_start.yml --extra-vars "host=서버 호스트"
 ```
-#### Logstsh - 중지
+Logstash - 중지
 ```sh
 ansible-playbook -i inventories/대상서버군 logtash_stop.yml --extra-vars "host=서버 호스트"
 ```
-Logstsh - 재시작
+Logstash - 재시작
 ```sh
 ansible-playbook -i inventories/대상서버군 logtash_stop.yml --extra-vars "host=서버 호스트"
 ```
