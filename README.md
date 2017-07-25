@@ -5,10 +5,12 @@ ansible-km-iris-logstash
 [![ansible](https://img.shields.io/badge/ansible-2.3-orange.svg)](https://www.ansible.com/it-automation)
 
 ## Index
-1. Directories schema
-2. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 실행 계정
-3. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보
-6. <a href="#6-Logstash-설치-및-설정시에-사전-확인해야-할-항목->-JDK-설치-및-설정">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정</a>
+1. <a href="#1-directories-schema">Directories schema</a>
+2. <a href="#2-logstash-설치-및-설정시에-사전-확인해야-할-항목--실행-계정">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 실행 계정</a>
+3. <a href="#3-logstash-설치-및-설정시에-사전-확인해야-할-항목--파일-및-다운로드-url-정보">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보</a>
+4. <a href="#4-logstash-input-config-관련-항목들-확인">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > input/output config 관련 항목</a>
+5. <a href="#5-logstash-설치-및-설정-대상-remote-server-항목들-확인">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > Logstash 설치 및 설정 대상 서버 목록</a>
+6. <a href="#6-logstash-설치-및-설정시에-사전-확인해야-할-항목--jdk-설치-및-설정">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정</a>
 8. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)
 10. <a href="#10-전체-설치-디렉터리-생성-jdk-설치-logstash설치-등">전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)</a>
 
@@ -40,15 +42,19 @@ items | desc  | 필수 확인
 | logstash.filename | 설치하고자 하는 Logstash 파일명 (확장자 제외)  |Y
 | logstash.url | 설치하고자 하는 버전의 Logstash 다운로드 URL  |Y
 
-## 4. Logstash input config 관련 항목들 확인
+## 4. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > input/output config 관련 항목
 > 디렉터리 : group_vars  
 > 파일이름 : all  
 
 items | desc  | 필수 확인
 | ------------- | ------------- |---|
-| logstash.conf.output.hosts | Elasticserach의 호스트명 혹은 도메인을 설정  |Y
+| logstash.conf.input.bootstrap_servers|Kafka Address |Y
+| logstash.conf.input.codec|Kafka 메시징 코덱|Y
+| logstash.conf.input.group_id|Consumer가 속한 그룹의 식별자|Y
+| logstash.conf.input.client_id|ID 문자열|Y or N (되도록 체크)
+| logstash.conf.output.hosts|Elasticsearch의 마스터 노드 address 혹은 도메인|Y
 
-## 5. Logstash 설치 및 설정 대상 Remote server 항목들 확인
+## 5. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > Logstash 설치 및 설정 대상 서버 목록
 > 디렉터리 : inventories/하위  
 > 파일이름 : main.yml  
 >
@@ -67,7 +73,7 @@ items | desc  | 필수 확인
 | jdk.url | JDK 파일 다운로드 URL  |N
 
 
-## 7. Logstash 기본 설치 & 설정 항목 및 플러그인 설정 항목들 확인
+## 7. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 기타 항목 및 플러그인 설정 항목
 > 디렉터리 : roles/logstash/vars  
 > 파일이름 : main.yml
 
