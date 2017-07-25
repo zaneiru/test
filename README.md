@@ -10,7 +10,7 @@ ansible-km-iris-logstash
 3. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보
 6. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정
 8. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)
-10. <a href="#launcher">전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)</a>
+10. <a href="launcher">전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)</a>
 
 ## 1. Directories schema
 
