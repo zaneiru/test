@@ -147,11 +147,11 @@ ansible-playbook -i inventories/대상서버군 logtash_setup.yml --extra-vars "
 ```
 
 ### 12. Logstash만 시작 / 중지 / 재시작
-Logstsh - 시작
+#### Logstsh - 시작
 ```sh
 ansible-playbook -i inventories/대상서버군 logtash_start.yml --extra-vars "host=서버 호스트"
 ```
-Logstsh - 중지
+#### Logstsh - 중지
 ```sh
 ansible-playbook -i inventories/대상서버군 logtash_stop.yml --extra-vars "host=서버 호스트"
 ```
