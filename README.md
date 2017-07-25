@@ -10,7 +10,7 @@ ansible-km-iris-logstash
 3. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보
 6. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정
 8. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)
-10. <a name="#launcher">전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)</a>
+10. <a id="#launcher">전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)</a>
 
 ## 1. Directories schema
 
@@ -113,17 +113,17 @@ items | desc  | 필수 확인 항목
 
 ## [10. 전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)](#launcher)
 Develop - syntax  
-```bash
+```ruby
 ansible-playbook -i inventories/sh대상서버군(develop) launcher.yml --extra-vars "host=서버 호스트"
 ```
 Develop - sample
-```bash
+```ruby
 ansible-playbook -i inventories/logstash-develop launcher.yml --extra-vars "host=logstash-develop"
 ```
  
 
 Production - syntax
-```bash
+```ruby
 ansible-playbook -i inventories/대상서버군(production) launcher.yml --extra-vars "host=서버 호스트"
 ```
 Develop - sample
