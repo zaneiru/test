@@ -36,7 +36,7 @@ items | desc  | 필수 확인
 | account.group  | 실행 계정의 그룹  |Y
 
 ### 3. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보
-```이미 설치된 Elasticsearch가 클러스터 구조일 경우 기존에 설치된 Logstash의 버전과 맞춰줘야 한다.```
+```이미 설치된 Elasticsearch가 클러스터 구조일 경우 기존에 설치된 Logstash의 버전과 맞춰줘야 한다.```  
 `디렉터리 : group_vars`  
 `파일이름 : all`
 
@@ -61,9 +61,9 @@ items | desc  | 필수 확인
 ### 5. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > Logstash 설치 및 설정 대상 서버 목록
 `디렉터리 : inventories/하위`  
 `파일이름 : main.yml`  
->
-> `신규 서버 추가시에는 **[logstash-develop-new]** 혹은 **[logstash-production-new]** 추가후 Logstash 설치 및 설정 진행`  
-> `모든 설정 완료 후에는 기존 **[logstash-develop]** 및 **[logstash-production]** 에 해당 서버 호스트 추가하고 *-new 호스트 그룹은 삭제`
+
+`신규 서버 추가시에는 **[logstash-develop-new]** 혹은 **[logstash-production-new]** 추가후 Logstash 설치 및 설정 진행`  
+`모든 설정 완료 후에는 기존 **[logstash-develop]** 및 **[logstash-production]** 에 해당 서버 호스트 추가하고 *-new 호스트 그룹은 삭제`
 
 ### 6. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정
 ```JDK가 이미 설된 경우 고려하지 않아도 된다.```
