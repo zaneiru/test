@@ -13,10 +13,10 @@ ansible-km-iris-logstash
 6. <a href="#6-logstash-설치-및-설정시에-사전-확인해야-할-항목--jdk-설치-및-설정">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정</a>
 7. <a href="#7-logstash-설치-및-설정시에-사전-확인해야-할-항목--기타-항목-및-플러그인-설정-항목">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 기타 항목 및 플러그인 설정 항목</a>
 8. <a href="#8-logstash-설치-및-설정시에-사전-확인해야-할-항목--모피어스-알림smith">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)</a>
-9. <a href="">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > Logstash 플러그인 설정 항목들 확인</a>
+9. <a href="#9-logstash-설치-및-설정시에-사전-확인해야-할-항목--logstash-플러그인-설정-항목들-확인">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > Logstash 플러그인 설정 항목들 확인</a>
 10. <a href="#10-전체-설치-디렉터리-생성-jdk-설치-logstash설치-등">전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)</a>
-11. <a href="">Logstash만 설치</a>
-12. <a href="">Logstash만 시작 / 중지 / 재시작</a>
+11. <a href="#11-logstash만-설치">Logstash만 설치</a>
+12. <a href="#12-logstash만-시작--중지--재시작">Logstash만 시작 / 중지 / 재시작</a>
 
 ## 1. Directories schema
 
@@ -152,10 +152,10 @@ Logstsh - 시작
 ansible-playbook -i inventories/대상서버군 logtash_start.yml --extra-vars "host=서버 호스트"
 ```
 Logstsh - 중지
-```ruby
+```sh
 ansible-playbook -i inventories/대상서버군 logtash_stop.yml --extra-vars "host=서버 호스트"
 ```
 Logstsh - 재시작
-```ruby
+```ansible
 ansible-playbook -i inventories/대상서버군 logtash_stop.yml --extra-vars "host=서버 호스트"
 ```
