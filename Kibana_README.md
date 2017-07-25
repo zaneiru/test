@@ -52,7 +52,7 @@ items | desc  | 필수 확인
 `파일이름 : main.yml`  
 
 `신규 서버 추가시에는 [kibana-develop-new] 혹은 [kibana-production-new] 추가후 Kibana 설치 및 설정 진행`  
-`모든 설정 완료 후에는 기존 **[kibana-develop] 및 [kibana-production] 에 해당 서버 호스트 추가하고 *-new 호스트 그룹은 삭제`
+`모든 설정 완료 후에는 기존 [kibana-develop] 및 [kibana-production] 에 해당 서버 호스트 추가하고 *-new 호스트 그룹은 삭제`
 
 ### 5. Kibana 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정
 ```JDK가 이미 설된 경우 고려하지 않아도 된다.```  
@@ -80,7 +80,7 @@ items | desc  | 필수 확인 항목
 | config.elasticsearch.url| Elasticsearch의 master node가 여러개일 경우 애조로에서 마스터 노드를 설정하고 해당 도메인을 사용|Y
 | config.elasticsearch.requesttimeout| Request 타임아웃|N
 
-`Kibana를 Elasticsearch와 동일한 node에 설치할 경우 config.elasticsearch.url를 **localhost** 로 정의한다.
+`Kibana를 Elasticsearch와 동일한 node에 설치할 경우 config.elasticsearch.url를 **localhost** 로 정의한다.`
 
 ### 7. Kibana 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)
 `디렉터리 : roles/morpheus/vars`  
@@ -108,7 +108,7 @@ ansible-playbook -i inventories/대상서버군(develop) launcher.yml --extra-va
 ```
 Develop - sample
 ```sh
-ansible-playbook -i inventories/logstash-develop launcher.yml --extra-vars "host=logstash-develop"
+ansible-playbook -i inventories/logstash-develop launcher.yml --extra-vars "host=kibana-develop"
 ```
  
 Production - syntax
@@ -117,7 +117,7 @@ ansible-playbook -i inventories/대상서버군(production) launcher.yml --extra
 ```
 Develop - sample
 ```sh
-ansible-playbook -i inventories/logstash-production launcher.yml --extra-vars "host=logstash-production"
+ansible-playbook -i inventories/logstash-production launcher.yml --extra-vars "host=kibana-production"
 ```
 
 ### 10. Kibana만 설치
