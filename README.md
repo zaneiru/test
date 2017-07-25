@@ -66,7 +66,7 @@ items | desc  | 필수 확인
 > - 모든 설정 완료 후에는 기존 **[logstash-develop]** 및 **[logstash-production]** 에 해당 서버 호스트 추가하고 *-new 호스트 그룹은 삭제
 
 ### 6. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정
-#### JDK가 이미 설된 경우 고려하지 않아도 된다.
+```JDK가 이미 설된 경우 고려하지 않아도 된다.```
 > 디렉터리 : roles/jdk/vars  
 > 파일이름 : main.yml
 
