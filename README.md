@@ -8,11 +8,15 @@ ansible-km-iris-logstash
 1. <a href="#1-directories-schema">Directories schema</a>
 2. <a href="#2-logstash-설치-및-설정시에-사전-확인해야-할-항목--실행-계정">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 실행 계정</a>
 3. <a href="#3-logstash-설치-및-설정시에-사전-확인해야-할-항목--파일-및-다운로드-url-정보">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 파일 및 다운로드 URL 정보</a>
-4. <a href="#4-logstash-input-config-관련-항목들-확인">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > input/output config 관련 항목</a>
-5. <a href="#5-logstash-설치-및-설정-대상-remote-server-항목들-확인">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > Logstash 설치 및 설정 대상 서버 목록</a>
+4. <a href="#4-logstash-설치-및-설정시에-사전-확인해야-할-항목--inputoutput-config-관련-항목">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > input/output config 관련 항목</a>
+5. <a href="#5-logstash-설치-및-설정시에-사전-확인해야-할-항목--logstash-설치-및-설정-대상-서버-목록">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > Logstash 설치 및 설정 대상 서버 목록</a>
 6. <a href="#6-logstash-설치-및-설정시에-사전-확인해야-할-항목--jdk-설치-및-설정">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > JDK 설치 및 설정</a>
-8. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)
+7. <a href="#7-logstash-설치-및-설정시에-사전-확인해야-할-항목--기타-항목-및-플러그인-설정-항목">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 기타 항목 및 플러그인 설정 항목</a>
+8. <a href="#8-logstash-설치-및-설정시에-사전-확인해야-할-항목--모피어스-알림smith">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > 모피어스 알림(Smith)</a>
+9. <a href="">Logstash 설치 및 설정시에 사전 확인해야 할 항목 > Logstash 플러그인 설정 항목들 확인</a>
 10. <a href="#10-전체-설치-디렉터리-생성-jdk-설치-logstash설치-등">전체 설치 (디렉터리 생성, JDK 설치, Logstash설치 등)</a>
+11. <a href="">Logstash만 설치</a>
+12. <a href="">Logstash만 시작 / 중지 / 재시작</a>
 
 ## 1. Directories schema
 
@@ -107,7 +111,7 @@ items | desc  | 필수 확인 항목
 | smith.url | 모피어스 알림 에이전트인 Smith 다운로드 URL  |N
 
 
-##  9. Logstash 플러그인 설정 항목들 확인 
+##  9. Logstash 설치 및 설정시에 사전 확인해야 할 항목 > Logstash 플러그인 설정 항목들 확인 
 > 디렉터리 : roles/plugin/vars  
 > 파일이름 : main.yml
 
@@ -127,22 +131,31 @@ Develop - sample
 ansible-playbook -i inventories/logstash-develop launcher.yml --extra-vars "host=logstash-develop"
 ```
  
-
 Production - syntax
 ```ruby
 ansible-playbook -i inventories/대상서버군(production) launcher.yml --extra-vars "host=서버 호스트"
 ```
 Develop - sample
-<pre><code>ansible-playbook -i inventories/logstash-production launcher.yml --extra-vars "host=logstash-production"</code></pre>
+```ruby
+ansible-playbook -i inventories/logstash-production launcher.yml --extra-vars "host=logstash-production"
+```
 
-# 10. Logstash만 설치
+# 11. Logstash만 설치
 Logstsh - syntax
-<pre><code>ansible-playbook -i inventories/대상서버군 logtash_setup.yml --extra-vars "host=서버 호스트"</code></pre>
+```ruby
+ansible-playbook -i inventories/대상서버군 logtash_setup.yml --extra-vars "host=서버 호스트"
+```
 
-# 11. Logstash만 시작 / 중지 / 재시작
+# 12. Logstash만 시작 / 중지 / 재시작
 Logstsh - 시작
-<pre><code>ansible-playbook -i inventories/대상서버군 logtash_start.yml --extra-vars "host=서버 호스트"</code></pre>
+```ruby
+ansible-playbook -i inventories/대상서버군 logtash_start.yml --extra-vars "host=서버 호스트"
+```
 Logstsh - 중지
-<pre><code>ansible-playbook -i inventories/대상서버군 logtash_stop.yml --extra-vars "host=서버 호스트"</code></pre>
+```ruby
+ansible-playbook -i inventories/대상서버군 logtash_stop.yml --extra-vars "host=서버 호스트"
+```
 Logstsh - 재시작
-<pre><code>ansible-playbook -i inventories/대상서버군 logtash_stop.yml --extra-vars "host=서버 호스트"</code></pre>
+```ruby
+ansible-playbook -i inventories/대상서버군 logtash_stop.yml --extra-vars "host=서버 호스트"
+```
